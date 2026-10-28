@@ -1,12 +1,12 @@
 $(window).on("load", function () {
-  const allowedNames = ["angie", "g", "angelique"];
+  const allowedNames = ["g", "angelique"];
   const askedName = prompt("Gib deinen Namen ein");
   const cleanName = (askedName || "").trim();
 
   // Falscher oder leerer Name: Sorry-Nachricht zeigen und alles andere abbrechen
   if (!allowedNames.includes(cleanName.toLowerCase())) {
     const sorry = document.createElement("div");
-    sorry.textContent = "Sorry, das ist nicht für dich.";
+    sorry.textContent = "Sorry, das ist nicht für dich. Falls doch gib deinen Spitznamen von mir ein aber lade die Seite zuerst neu. ";
     sorry.style.cssText =
       "position:fixed;inset:0;z-index:99999;display:flex;align-items:center;" +
       "justify-content:center;background:#111;color:#fff;font-size:24px;" +
