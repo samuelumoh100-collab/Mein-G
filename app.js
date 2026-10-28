@@ -1,5 +1,5 @@
 $(window).on("load", function () {
-  const allowedNames = ["g", "angelique"];
+  const allowedNames = ["g", "angelique", "mein g"];
   const askedName = prompt("Gib deinen Namen ein");
   const cleanName = (askedName || "").trim();
 
