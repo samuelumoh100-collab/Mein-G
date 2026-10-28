@@ -66,7 +66,7 @@ $(window).on("load", function () {
 
   const typed = new Typed("#text", {
     strings: [
-      "Feliz Día de la Mujer! Eres una chica realmente especial y por eso preparé algo para ti otra vez, para que te sientas tan única y maravillosa como eres! ;)</b>",
+      "Hey, also ich weiß du redest gerade nicht mit mir, aber vergiss einfach die letzten Tagen. Ich will noch mit dir eigentlich auf ein Date gehen. Falls du das auch noch ein bisschen willst, ruf mich an, wenn du dir noch nicht sicher bist dann auch, aber wenn du wirklich zu keinem Zeitpunikt das willst, dann ignorier das einfach aber kannst trotzdem mal anrufen. 06601889128 ;)</b>",
     ],
     startDelay: 4500,
     typeSpeed: 92,
