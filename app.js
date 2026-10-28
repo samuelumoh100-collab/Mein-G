@@ -74,7 +74,7 @@ $(window).on("load", function () {
       "Hey, also ich weiß du redest gerade nicht mit mir, aber vergiss einfach die letzten Tage. Ich will noch mit dir eigentlich auf ein Date gehen. Falls du das auch noch ein bisschen willst, ruf mich an, wenn du dir noch nicht sicher bist dann auch, aber wenn du wirklich zu keinem Zeitpunkt das willst, dann ignorier das einfach aber kannst trotzdem mal anrufen. 06601889128 ;)",
     ],
     startDelay: 4500,
-    typeSpeed: 92,
+    typeSpeed: 75,
     loop: false,
     showCursor: false,
     preStringTyped: function () {
