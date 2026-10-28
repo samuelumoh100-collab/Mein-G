@@ -9,7 +9,7 @@ $(window).on("load", function () {
     askedName === undefined ||
     askedName === ""
   ) {
-    name.text("Mi Reina");
+    name.text("Mein G");
     $(".preloader").addClass("revomed");
   }
 
