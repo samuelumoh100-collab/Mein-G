@@ -1,19 +1,23 @@
 $(window).on("load", function () {
-  let name = $(".enteredName");
+  const allowedNames = ["angie", "g", "angelique"];
   const askedName = prompt("Gib deinen Namen ein");
-  const isMobile = window.matchMedia("(max-width: 990px)").matches;
+  const cleanName = (askedName || "").trim();
 
-  if (askedName) {
-    name.text(askedName);
-  } else if (
-    askedName === null ||
-    askedName === undefined ||
-    askedName === ""
-  ) {
-    name.text("Mein G");
-    $(".preloader").addClass("revomed");
+  // Falscher oder leerer Name: Sorry-Nachricht zeigen und alles andere abbrechen
+  if (!allowedNames.includes(cleanName.toLowerCase())) {
+    const sorry = document.createElement("div");
+    sorry.textContent = "Sorry, das ist nicht für dich.";
+    sorry.style.cssText =
+      "position:fixed;inset:0;z-index:99999;display:flex;align-items:center;" +
+      "justify-content:center;background:#111;color:#fff;font-size:24px;" +
+      "font-family:sans-serif;text-align:center;padding:20px;";
+    document.body.appendChild(sorry);
+    return;
   }
 
+  const isMobile = window.matchMedia("(max-width: 990px)").matches;
+
+  $(".enteredName").text(cleanName);
   $(".preloader").addClass("revomed");
   $(".card").addClass("animated");
 
@@ -74,14 +78,12 @@ $(window).on("load", function () {
     loop: false,
     showCursor: false,
     preStringTyped: function () {
-      const title = document.getElementById("title");
-      title.style.opacity = 1;
+      document.getElementById("title").style.opacity = 1;
     },
     onComplete: function () {
-      const author = document.getElementById("author");
-      author.style.opacity = 1;
+      document.getElementById("author").style.opacity = 1;
 
-      // Blume erst einblenden, wenn der Text fertig ist (kleine Pause, damit er wirken kann)
+      // Blume erst einblenden, wenn der Text fertig ist
       setTimeout(function () {
         if (isMobile) {
           $(".bouquet-img").css("transform", "translate(200px, 140%)");
