@@ -1,6 +1,7 @@
 $(window).on("load", function () {
   let name = $(".enteredName");
   const askedName = prompt("Gib deinen Namen ein");
+  const isMobile = window.matchMedia("(max-width: 990px)").matches;
 
   if (askedName) {
     name.text(askedName);
@@ -66,7 +67,7 @@ $(window).on("load", function () {
 
   const typed = new Typed("#text", {
     strings: [
-      "Hey, also ich weiß du redest gerade nicht mit mir, aber vergiss einfach die letzten Tagen. Ich will noch mit dir eigentlich auf ein Date gehen. Falls du das auch noch ein bisschen willst, ruf mich an, wenn du dir noch nicht sicher bist dann auch, aber wenn du wirklich zu keinem Zeitpunikt das willst, dann ignorier das einfach aber kannst trotzdem mal anrufen. 06601889128 ;)</b>",
+      "Hey, also ich weiß du redest gerade nicht mit mir, aber vergiss einfach die letzten Tage. Ich will noch mit dir eigentlich auf ein Date gehen. Falls du das auch noch ein bisschen willst, ruf mich an, wenn du dir noch nicht sicher bist dann auch, aber wenn du wirklich zu keinem Zeitpunkt das willst, dann ignorier das einfach aber kannst trotzdem mal anrufen. 06601889128 ;)",
     ],
     startDelay: 4500,
     typeSpeed: 92,
@@ -79,28 +80,25 @@ $(window).on("load", function () {
     onComplete: function () {
       const author = document.getElementById("author");
       author.style.opacity = 1;
+
+      // Blume erst einblenden, wenn der Text fertig ist (kleine Pause, damit er wirken kann)
+      setTimeout(function () {
+        if (isMobile) {
+          $(".bouquet-img").css("transform", "translate(200px, 140%)");
+        } else {
+          $(".bouquet-img").css("transform", "translate(220px, 100%)");
+        }
+        $(".card").attr("style", "opacity: 0.5 !important;");
+      }, 1500);
     },
   });
 
-  if (window.matchMedia("(max-width: 990px)").matches) {
-    setTimeout(function () {
-      $(".bouquet-img").css("transform", "translate(200px, 140%)");
-      $(".card").attr("style", "opacity: 0.5 !important;");
-    }, 28000);
-
-    $(".bouquet-img").on("click mouseleave", function () {
+  $(".bouquet-img").on("click mouseleave", function () {
+    if (isMobile) {
       $(this).css("transform", "translate(200px, 260%)");
-      $(".card").attr("style", "opacity: 0.8 !important;");
-    });
-  } else {
-    setTimeout(function () {
-      $(".bouquet-img").css("transform", "translate(220px, 100%)");
-      $(".card").attr("style", "opacity: 0.5 !important;");
-    }, 26000);
-
-    $(".bouquet-img").on("click mouseleave", function () {
+    } else {
       $(this).css("transform", "translate(200px, 220%)");
-      $(".card").attr("style", "opacity: 0.8 !important;");
-    });
-  }
+    }
+    $(".card").attr("style", "opacity: 0.8 !important;");
+  });
 });
