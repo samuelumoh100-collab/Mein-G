@@ -71,7 +71,7 @@ $(window).on("load", function () {
 
   const typed = new Typed("#text", {
     strings: [
-      "Hey, also ich weiß du redest gerade nicht mit mir, aber vergiss einfach die letzten Tage. Ich will eigentlich immer noch mit dir auf ein Date gehen, dein lächeln geht mir nicht aus dem Kopf. Falls du das auch ein bisschen willst, ruf mich an, wenn du dir noch nicht sicher bist dann auch, aber wenn du wirklich zu keinem Zeitpunkt das willst, dann ignorier das einfach aber kannst trotzdem mal anrufen. 06601889128 ;)",
+      "Hey, also ich weiß du redest gerade nicht mit mir, aber vergiss einfach die letzten Tage. Ich will eigentlich immer noch mit dir auf ein Date gehen, dein lächeln geht mir irgendwie nicht aus dem Kopf. Falls du das auch ein bisschen willst, ruf mich an, wenn du dir noch nicht sicher bist dann auch, aber wenn du wirklich zu keinem Zeitpunkt das willst, dann ignorier das einfach aber kannst trotzdem mal anrufen. 06601889128 ;)",
     ],
     startDelay: 4500,
     typeSpeed: 75,
