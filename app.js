@@ -1,23 +1,10 @@
 $(window).on("load", function () {
-  const allowedNames = ["g", "mein g"];
-  const askedName = prompt("Gib deinen Namen ein");
-  const cleanName = (askedName || "").trim();
-
-  // Falscher oder leerer Name: Sorry-Nachricht zeigen und alles andere abbrechen
-  if (!allowedNames.includes(cleanName.toLowerCase())) {
-    const sorry = document.createElement("div");
-    sorry.textContent = "Sorry, das ist nicht für dich. Falls doch, gib deinen Spitznamen von mir ein aber lade die Seite zuerst neu. ";
-    sorry.style.cssText =
-      "position:fixed;inset:0;z-index:99999;display:flex;align-items:center;" +
-      "justify-content:center;background:#111;color:#fff;font-size:24px;" +
-      "font-family:sans-serif;text-align:center;padding:20px;";
-    document.body.appendChild(sorry);
-    return;
-  }
+  // Name, der auf der Seite angezeigt wird (hier ändern)
+  const displayName = "Angie";
 
   const isMobile = window.matchMedia("(max-width: 990px)").matches;
 
-  $(".enteredName").text(cleanName);
+  $(".enteredName").text(displayName);
   $(".preloader").addClass("revomed");
   $(".card").addClass("animated");
 
@@ -71,7 +58,7 @@ $(window).on("load", function () {
 
   const typed = new Typed("#text", {
     strings: [
-      "Hey, also ich weiß du redest gerade nicht mit mir, aber vergiss einfach die letzten Tage. Ich will eigentlich immer noch mit dir auf ein Date gehen, dein lächeln geht mir irgendwie nicht aus dem Kopf. Falls du das auch ein bisschen willst, ruf mich an, wenn du dir noch nicht sicher bist dann auch, aber wenn du wirklich zu keinem Zeitpunkt das willst, dann ignorier das einfach aber kannst trotzdem mal anrufen. 06601889128 ;)",
+      "Hey, also ich weiß du redest gerade nicht mit mir, aber vergiss einfach die letzten Tage. Ich will noch mit dir eigentlich auf ein Date gehen. Falls du das auch noch ein bisschen willst, ruf mich an, wenn du dir noch nicht sicher bist dann auch, aber wenn du wirklich zu keinem Zeitpunkt das willst, dann ignorier das einfach aber kannst trotzdem mal anrufen. 06601889128 ;)",
     ],
     startDelay: 4500,
     typeSpeed: 75,
@@ -104,3 +91,4 @@ $(window).on("load", function () {
     $(".card").attr("style", "opacity: 0.8 !important;");
   });
 });
+
