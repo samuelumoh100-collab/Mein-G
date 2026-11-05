@@ -1,6 +1,6 @@
 $(window).on("load", function () {
   // Name, der auf der Seite angezeigt wird (hier ändern)
-  const displayName = "Angie";
+  const displayName = "Mein G";
 
   const isMobile = window.matchMedia("(max-width: 990px)").matches;
 
